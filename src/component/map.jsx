@@ -1,11 +1,12 @@
 import React, { useState,useEffect } from 'react';
 import ReactMapGL from 'react-map-gl';
 import axios from 'axios';
+import Marker from './markers';
 const Map=()=>
 {
     const [state,setState]=useState(null);
     const [viewPort,setViewPort]=useState({
-        width:'800px',
+        width:'750px',
         height:600,
         latitude:0,
         longtitude:0,
@@ -39,6 +40,12 @@ const Map=()=>
                 mapStyle="mapbox://styles/mapbox/streets-v11"
                 onViewportChange={viewPort=>setViewPort(viewPort)}
                 >
+                    {
+                        !state?
+                        null:
+                        <Marker data={state}/>
+                    }
+                   
                     </ReactMapGL>
             </div>
         </React.Fragment>

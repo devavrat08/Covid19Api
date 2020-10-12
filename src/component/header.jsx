@@ -6,7 +6,7 @@ import TotalCases from './totalcases';
 
 
 const Header=()=>{
-
+    
     const [totalCases,setTotalCases]=useState("");
     const[recovered,setRecovered]=useState("");
     const[totalDeath,setTotalDeath]=useState("");
